@@ -8,7 +8,7 @@
     "bundle": "node_modules/.bin/webpack --config webpack.deploy.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Scott Bowler",
+  "author": "Matt Barnett",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
