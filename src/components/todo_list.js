@@ -12,8 +12,9 @@ class TodoList extends Component {
     renderList(){
         return this.props.todos.map( (item,index)  => {
             console.log('To Do Item', item);
+            console.log(item.complete)
             return (
-            <li className="collection-item" key={index}> 
+            <li className="collection-item" key={index} style={item.complete ? {textDecoration:'line-through', fontSize: '16px'} : {textDecoration:'none', fontSize: '18px'}}> 
                 <Link to={`/item/${item._id}`}>{item.title}</Link>
             </li>
             )
@@ -24,7 +25,7 @@ class TodoList extends Component {
         return(
             <div>
                 <h1 className="center-align">To Do List 2.0</h1>
-                <Link className='btn' to='/add-item'>Add Item</Link>
+                <Link className='btn btn-floating' to='/add-item'>+</Link> 
                 <ul className="collection">
                     {this.renderList()}
                 </ul>
