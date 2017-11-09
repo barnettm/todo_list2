@@ -8,7 +8,9 @@ export default function(state = DEFAULT_STATE, action) {
             return {...state, all: action.payload.data.todos};
         case types.GET_SINGLE:
         case types.TOGGLE_COMPLETE:
-            return {...state, single: action.payload.data.todo};     
+            return {...state, single: action.payload.data.todo};   
+        case types.DELETE_ITEM:
+            return {...state, single: action.payload.data.todo};      
         default:
             return state;
     }
