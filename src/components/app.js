@@ -1,12 +1,14 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
-import TodoList from './todo_list'
+import {Link, Route} from 'react-router-dom';
 
+import AddItem from './add_item';
+import TodoList from './todo_list'
 
 const App = () => (
     <div className="container">
-       <h1 className="center-align">To Do List 2.0</h1>
-       <TodoList />
+       <Route exact path="/" component={TodoList} />
+       <Route path='/add-item' component={AddItem} />
     </div>
 );
 
