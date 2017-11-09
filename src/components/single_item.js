@@ -20,6 +20,13 @@ class SingleItem extends Component {
         this.props.history.push('/')
     }
 
+    convertTime(){
+        let time = parseInt(this.props.single.created);
+        let convert = new Date(time);
+        let formated = convert.toLocaleString();
+        return formated;
+    }
+
     
     render(){
 
@@ -34,15 +41,17 @@ class SingleItem extends Component {
         console.log(this.props)
         return(
             <div>
-                <div>
-                    <Link className="btn red darken-2" to='/' style={{margin: '8px'}}>Go Back</Link>
-                </div>
+            
                 <h3>{this.props.single.title}</h3>
                 <p>Details: {single.details}</p>
                 <p>Created By: {single.userId}</p>
+                <p>Created On: {this.convertTime()}</p>
                 <p>Status: {single.complete ? 'Item Complete' : 'Incomplete'}</p>
-                <button className={`btn ${single.complete ? 'red' : 'green'}`} onClick={() => this.toggleComplete()}>{single.complete ? 'Restore' : 'Complete'}</button>
+                <button className={`btn ${single.complete ? 'amber darken-3' : 'green'}`} onClick={() => this.toggleComplete()}>{single.complete ? 'Restore' : 'Complete'}</button>
                 <button className="btn red" onClick={() => this.deleteItem()} style={{margin: '8px'}}>Delete Item</button>
+                <div>
+                    <Link className="btn purple darken-2" to='/'>Go Back</Link>
+                </div>
             </div>
         )
     }
