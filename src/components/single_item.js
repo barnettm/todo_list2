@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {getSingle, toggleComplete, deleteItem} from '../actions';
 
 
@@ -32,12 +33,15 @@ class SingleItem extends Component {
         console.log(this.props)
         return(
             <div>
+                <div>
+                    <Link className="btn red darken-2" to='/' style={{margin: '8px'}}>Go Back</Link>
+                </div>
                 <h3>{this.props.single.title}</h3>
                 <p>Details: {single.details}</p>
                 <p>Created By: {single.userId}</p>
                 <p>Status: {single.complete ? 'Item Complete' : 'Incomplete'}</p>
                 <button className={`btn ${single.complete ? 'red' : 'green'}`} onClick={() => this.toggleComplete()}>{single.complete ? 'Restore' : 'Complete'}</button>
-                <button className="btn red" onClick={() => this.deleteItem()}>Delete Item</button>
+                <button className="btn red" onClick={() => this.deleteItem()} style={{margin: '8px'}}>Delete Item</button>
             </div>
         )
     }
