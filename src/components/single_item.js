@@ -20,6 +20,7 @@ class SingleItem extends Component {
         this.props.history.push('/')
     }
 
+    
     render(){
 
         const {single} = this.props;
