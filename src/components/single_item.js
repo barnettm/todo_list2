@@ -10,12 +10,11 @@ class SingleItem extends Component {
         this.props.getSingle(this.props.match.params.id);
     }
     toggleComplete(){
-        console.log('Toggle Complete:', this.props.single._id);
+        // console.log('Toggle Complete:', this.props.single._id);
         this.props.toggleComplete(this.props.single._id);
     }
 
     deleteItem(){
-        console.log('Delete Item: ', this.props.single._id)
         this.props.deleteItem(this.props.single._id)
         this.props.history.push('/')
     }
